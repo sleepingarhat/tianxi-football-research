@@ -1,2 +1,35 @@
 # tianxi-football-research
-Tianxi football research track: experiments, rejected-cuts notes, no frozen prediction artifacts
+
+天喜足球「研究軌」倉庫。S24 分家後，研究同生產完全分離。
+
+## 邊界（硬規則）
+
+- 本倉**冇**凍結預測、冇 prediction_log、冇版本指紋、冇每日凍結流程。
+- 本倉任何腳本、任何結果，**唔可以**寫入生產倉 `tianxi-football-database` 的
+  `data/predictions/`、`models/`、`snapshots/` 或任何指紋欄。
+- 研究要升級生產，唯一路徑：三主閘（RPS、實際比分格 log-loss、ECE）＋三副閘
+  （大細 2.5 校準、對角總質量、頭八格覆蓋）逐季 walk-forward 全過，
+  再由人手在生產倉開新指紋版本。研究倉自己升唔到指紋。
+- 產品站（tianxi-site）只讀生產倉凍結檔，永不讀本倉。
+
+## 結構
+
+- `scripts/research/` — 試驗腳本（一次一把，唔准疊加）
+- `data/research/` — 試驗結果 JSON（只增不改，保留失敗記錄）
+- `NOTES-rejected.md` — 禁止列：已否決嘅刀，唔准再掃
+
+## 已完成試驗（全部唔過閘，生產軌一分未動）
+
+| 編號 | 內容 | 裁決 |
+| --- | --- | --- |
+| S23 | 主客分拆攻防移植生產 | 唔過（gamma=0.12 生產軌已更優） |
+| S25-1 | DIBP 對角膨脹 p（聯賽常數） | 唔過（校準退、齊唱和） |
+| S25-2 | 雙變量泊松共享衝擊 λ₃ | 唔過（格 log-loss 退、2021 季輸返） |
+| S25-3 | 邊際換 CMP／負二項 | 唔過（肥尾全輸；ν=1.01 幅度雜訊級） |
+| S25-4 | DIBP 接 BP（λ₃ + p） | 唔過（13 組合零過閘） |
+| S25-5 | 動態攻防（隨機遊走） | 唔過（24 組合零過閘） |
+
+## 試驗 5 重開條件
+
+S24 分家完成（✅）＋ Δλ 條件層結構落地（見生產倉 `docs/delta-schema.md`）
+＋紅燈規則寫入本倉後，才可重開跑。
