@@ -1,0 +1,41 @@
+name: shap-knife2
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 12 * * 3"
+permissions:
+  contents: write
+jobs:
+  shap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: sleepingarhat/tianxi-football-database
+          token: ${{ secrets.TIANXI_FOOTBALL_DATABASE_PAT || secrets.GITHUB_TOKEN }}
+          path: _db
+          sparse-checkout: |
+            models/s5/lgb.txt
+            models/s5/meta.json
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install lightgbm numpy pandas shap
+      - name: compute
+        run: |
+          mkdir -p data/research/s39
+          if [ -f _db/models/s5/lgb.txt ]; then
+            python scripts/research/lgb_shap_compute.py \
+              --lgb _db/models/s5/lgb.txt \
+              --meta _db/models/s5/meta.json \
+              --out data/research/s39/lgb_shap.json
+          else
+            echo '{"status":"blocked","reason":"no sibling model access"}' > data/research/s39/lgb_shap.json
+          fi
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh S5 LGB SHAP/gain snapshot (research only)"
+          file_pattern: data/research/s39/lgb_shap.json
