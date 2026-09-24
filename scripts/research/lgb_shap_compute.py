@@ -66,8 +66,10 @@ def main() -> int:
                     X = df[use].astype(float).fillna(0.0).to_numpy()[: args.max_rows]
                     sv = shap.TreeExplainer(booster).shap_values(X)
                     if isinstance(sv, list):
-                        sv = sv[0]
-                    mean_abs = np.abs(sv).mean(axis=0)
+                        sv = np.stack(sv, axis=-1)
+                    sv = np.asarray(sv)
+                    # multiclass: (n_rows, n_features, n_class) -> 平均埋三類
+                    mean_abs = np.abs(sv).mean(axis=(0, 2)) if sv.ndim == 3 else np.abs(sv).mean(axis=0)
                     order = np.argsort(-mean_abs)
                     out["global_mean_abs"] = [
                         {"feature": use[i], "mean_abs": float(mean_abs[i])}
