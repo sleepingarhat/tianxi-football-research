@@ -1,0 +1,9 @@
+{
+  "knife": 2,
+  "sport": "football",
+  "status": "blocked",
+  "fingerprint": "378c283b73a7-bb35e29b0c7b-175995",
+  "applied_to_freeze": false,
+  "ui": false,
+  "reason": "Need models/s5/lgb.txt + as-of feature rows in a research job. Gain-only is allowed as partial."
+}
