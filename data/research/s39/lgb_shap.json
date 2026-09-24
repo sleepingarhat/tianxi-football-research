@@ -1,1 +1,223 @@
-{"status":"blocked","reason":"no sibling model access"}
+{
+  "ok": true,
+  "knife": 2,
+  "sport": "football",
+  "status": "ok",
+  "fingerprint": "378c283b73a7-bb35e29b0c7b-175995",
+  "alpha": {
+    "lgb": 0.65,
+    "dc": 0.1,
+    "elo": 0.25
+  },
+  "method": "TreeSHAP on LGB track",
+  "applied_to_freeze": false,
+  "note": "Explains LGB 1X2 head only. elo_*/lam_*/dc_p* are collinear. Never say 勝出原因.",
+  "generated_at": "2026-09-24T12:12:16Z",
+  "n_features": 54,
+  "gain": [
+    {
+      "feature": "dc_pa",
+      "gain": 58313.290519833565
+    },
+    {
+      "feature": "elo_exp",
+      "gain": 55162.249136567116
+    },
+    {
+      "feature": "elo_diff",
+      "gain": 36110.99490201473
+    },
+    {
+      "feature": "lam_diff",
+      "gain": 32909.212460398674
+    },
+    {
+      "feature": "seen_a",
+      "gain": 15016.279384613037
+    },
+    {
+      "feature": "shots_l10_h",
+      "gain": 14574.504801392555
+    },
+    {
+      "feature": "shots_l10_a",
+      "gain": 13018.826326012611
+    },
+    {
+      "feature": "seen_h",
+      "gain": 12497.920700907707
+    },
+    {
+      "feature": "corners_l10_a",
+      "gain": 12033.48900949955
+    },
+    {
+      "feature": "elo_home",
+      "gain": 11533.632804751396
+    },
+    {
+      "feature": "corners_l10_h",
+      "gain": 11445.296484827995
+    },
+    {
+      "feature": "dc_pd",
+      "gain": 11146.799213528633
+    },
+    {
+      "feature": "dc_ph",
+      "gain": 11095.060054779053
+    },
+    {
+      "feature": "atk_h",
+      "gain": 10937.0566893816
+    },
+    {
+      "feature": "h2h_gd",
+      "gain": 10914.553750157356
+    },
+    {
+      "feature": "atk_a",
+      "gain": 10892.834472060204
+    },
+    {
+      "feature": "def_h",
+      "gain": 10652.448643684387
+    },
+    {
+      "feature": "elo_away",
+      "gain": 10232.153356194496
+    },
+    {
+      "feature": "def_a",
+      "gain": 9627.1475969553
+    },
+    {
+      "feature": "target_l10_h",
+      "gain": 8907.976379394531
+    },
+    {
+      "feature": "lam_a",
+      "gain": 8540.328280448914
+    },
+    {
+      "feature": "target_l10_a",
+      "gain": 8470.966541051865
+    },
+    {
+      "feature": "div_id",
+      "gain": 8061.321907162666
+    },
+    {
+      "feature": "cards_l10_a",
+      "gain": 7725.931341648102
+    },
+    {
+      "feature": "dc_btts",
+      "gain": 7533.646416544914
+    },
+    {
+      "feature": "lam_h",
+      "gain": 7505.581067800522
+    },
+    {
+      "feature": "cards_l10_h",
+      "gain": 7454.076679587364
+    },
+    {
+      "feature": "gfd_l10",
+      "gain": 5580.332409858704
+    },
+    {
+      "feature": "lam_sum",
+      "gain": 5499.6161673069
+    },
+    {
+      "feature": "ga_l10_a",
+      "gain": 5221.401840925217
+    }
+  ],
+  "global_mean_abs": [
+    {
+      "feature": "elo_exp",
+      "mean_abs": 0.061548235459490334
+    },
+    {
+      "feature": "dc_pa",
+      "mean_abs": 0.049351690627421646
+    },
+    {
+      "feature": "elo_diff",
+      "mean_abs": 0.04825063294733394
+    },
+    {
+      "feature": "shots_l10_h",
+      "mean_abs": 0.042150989033676624
+    },
+    {
+      "feature": "seen_a",
+      "mean_abs": 0.03850791927697211
+    },
+    {
+      "feature": "shots_l10_a",
+      "mean_abs": 0.033312125712611974
+    },
+    {
+      "feature": "corners_l10_a",
+      "mean_abs": 0.027438162894372935
+    },
+    {
+      "feature": "lam_diff",
+      "mean_abs": 0.027404704160105466
+    },
+    {
+      "feature": "seen_h",
+      "mean_abs": 0.024544934106700465
+    },
+    {
+      "feature": "corners_l10_h",
+      "mean_abs": 0.023271538971427898
+    },
+    {
+      "feature": "div_id",
+      "mean_abs": 0.01891008431807134
+    },
+    {
+      "feature": "dc_pd",
+      "mean_abs": 0.01869635663759436
+    },
+    {
+      "feature": "elo_home",
+      "mean_abs": 0.018525647229770296
+    },
+    {
+      "feature": "pts_l10_h",
+      "mean_abs": 0.01376575128607949
+    },
+    {
+      "feature": "def_a",
+      "mean_abs": 0.01238228026397546
+    },
+    {
+      "feature": "elo_away",
+      "mean_abs": 0.011147556308415081
+    },
+    {
+      "feature": "def_h",
+      "mean_abs": 0.011101474223868748
+    },
+    {
+      "feature": "ga_l10_h",
+      "mean_abs": 0.011079904801124425
+    },
+    {
+      "feature": "atk_h",
+      "mean_abs": 0.011023603319631207
+    },
+    {
+      "feature": "form3h",
+      "mean_abs": 0.01093594087148029
+    }
+  ],
+  "reason": null,
+  "n_rows": 4000
+}
