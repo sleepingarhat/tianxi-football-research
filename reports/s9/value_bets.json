@@ -1,0 +1,82 @@
+{
+ "w_goals=1.0": {
+  "matches": 10947,
+  "with_odds": 10927,
+  "flat_best_thr00": {
+   "bets": 15236,
+   "yield_pct": -5.52
+  },
+  "flat_best_thr02": {
+   "bets": 13631,
+   "yield_pct": -5.95
+  },
+  "flat_best_thr05": {
+   "bets": 11349,
+   "yield_pct": -6.3
+  },
+  "flat_best_thr10": {
+   "bets": 8239,
+   "yield_pct": -8.82
+  },
+  "flat_b365_thr00": {
+   "bets": 11258,
+   "yield_pct": -10.53
+  },
+  "flat_b365_thr05": {
+   "bets": 7919,
+   "yield_pct": -12.5
+  },
+  "flat_b365_thr10": {
+   "bets": 5649,
+   "yield_pct": -12.33
+  },
+  "draw_only_best_thr05": {
+   "bets": 2197,
+   "yield_pct": -5.83
+  },
+  "draw_only_best_thr10": {
+   "bets": 1349,
+   "yield_pct": -10.52
+  }
+ },
+ "w_goals=0.3": {
+  "matches": 10947,
+  "with_odds": 10927,
+  "flat_best_thr00": {
+   "bets": 15139,
+   "yield_pct": -3.34
+  },
+  "flat_best_thr02": {
+   "bets": 13078,
+   "yield_pct": -4.86
+  },
+  "flat_best_thr05": {
+   "bets": 10466,
+   "yield_pct": -4.59
+  },
+  "flat_best_thr10": {
+   "bets": 7343,
+   "yield_pct": -6.67
+  },
+  "flat_b365_thr00": {
+   "bets": 10260,
+   "yield_pct": -10.1
+  },
+  "flat_b365_thr05": {
+   "bets": 6902,
+   "yield_pct": -11.77
+  },
+  "flat_b365_thr10": {
+   "bets": 4618,
+   "yield_pct": -12.09
+  },
+  "draw_only_best_thr05": {
+   "bets": 2030,
+   "yield_pct": -1.5
+  },
+  "draw_only_best_thr10": {
+   "bets": 1258,
+   "yield_pct": -11.88
+  }
+ }
+}
