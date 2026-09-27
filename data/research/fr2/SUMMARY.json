@@ -1,0 +1,10 @@
+{
+ "verdict": "PASS_TRACK",
+ "eval": "2021-2025",
+ "n": 8090,
+ "elo": {"rps": 0.20608, "logloss": 1.00554, "ece": 0.02368},
+ "pi_locked": {"lam": 0.02, "gamma": 1.0, "scale": 0.6, "rps": 0.20377, "logloss": 0.99846, "ece": 0.00388},
+ "select_window": "2018-2020",
+ "promote_to_prod": false,
+ "reason": "Need ens_s5 transplant before fingerprint bump"
+}
